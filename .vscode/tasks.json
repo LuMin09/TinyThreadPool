@@ -1,0 +1,26 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "echo",
+            "type": "shell",
+            "command": "g++",
+            "args":[
+                "-g", // 必须的参数，指定编译时需要使用gdb调试，否则会出现无法加入断点的问题
+                "task.cpp",
+                "task.h",
+                "taskqueue.cpp",
+                "taskqueue.h",
+                "main.cpp",
+                "threadpool.cpp",
+                "threadpool.h",
+                "-o",
+                "main.out",
+                "-pthread",
+                "-std=c++11"
+            ]
+        }
+    ]
+}
